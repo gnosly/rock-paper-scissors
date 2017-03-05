@@ -1,3 +1,4 @@
+package com.gnosly.domain;
 
 public class PlayerMove {
     private final Game.Player player;

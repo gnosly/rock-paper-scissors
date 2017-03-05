@@ -1,3 +1,7 @@
+package com.gnosly.domain;
+
+import com.gnosly.domain.Game;
+import com.gnosly.domain.MoveSelection;
 
 public class FixedMoveSelection implements MoveSelection {
 

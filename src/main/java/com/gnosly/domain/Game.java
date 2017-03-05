@@ -1,4 +1,4 @@
-
+package com.gnosly.domain;
 
 public class Game {
 

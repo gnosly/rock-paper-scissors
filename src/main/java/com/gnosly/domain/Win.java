@@ -1,3 +1,5 @@
+package com.gnosly.domain;
+
 import java.util.Objects;
 
 public class Win implements Result {
@@ -22,7 +24,7 @@ public class Win implements Result {
 
     @Override
     public String toString() {
-        return "Win{" +
+        return "com.gnosly.domain.Win{" +
                 "winner=" + winner +
                 '}';
     }
