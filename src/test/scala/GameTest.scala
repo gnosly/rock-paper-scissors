@@ -53,4 +53,28 @@ class GameTest extends FlatSpec with Matchers {
 	}
 
 
+	"Paper" should "win against rock" in {
+		val game = new Game(new FixedMoveSelection(Move.ROCK))
+
+		val result = game.play(Move.PAPER)
+
+		result shouldBe new Win(Player.HUMAN)
+	}
+
+	it should "tie against paper" in {
+		val game = new Game(new FixedMoveSelection(Move.PAPER))
+
+		val result = game.play(Move.PAPER)
+
+		result shouldBe new Tie()
+	}
+
+	it should "lose against scissors" in {
+		val game = new Game(new FixedMoveSelection(Move.SCISSORS))
+
+		val result = game.play(Move.PAPER)
+
+		result shouldBe new Win(Player.MACHINE)
+	}
+
 }

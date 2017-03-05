@@ -16,7 +16,8 @@ public class PlayerMove {
 
 
         if (move == Game.Move.ROCK && otherPlayerMove.move == Game.Move.SCISSORS ||
-                move == Game.Move.PAPER && otherPlayerMove.move == Game.Move.ROCK) {
+                move == Game.Move.PAPER && otherPlayerMove.move == Game.Move.ROCK ||
+                move == Game.Move.SCISSORS && otherPlayerMove.move == Game.Move.PAPER) {
             return new Win(player);
         }
 
