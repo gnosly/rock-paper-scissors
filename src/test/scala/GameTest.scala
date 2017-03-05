@@ -1,15 +1,17 @@
-import Game.{Move, Winner}
+import Game.{Move, Player}
 import org.scalatest.{FlatSpec, Matchers}
 
 
 class GameTest extends FlatSpec with Matchers {
 
-	"Game" should "handle a new match" in {
-		 val game = new Game()
+	"Rock" should "win over scissors" in {
+		val game = new Game(new FixedMoveSelection(Move.SCISSORS))
 
-			val winner = game.play(Move.ROCK)
+		val winner = game.play(Move.ROCK)
 
-			winner should (equal(Winner.HUMAN ) or equal(Winner.MACHINE))
+		winner shouldBe Player.HUMAN
 	}
+
+
 
 }
