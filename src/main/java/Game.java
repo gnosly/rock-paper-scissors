@@ -5,20 +5,17 @@ public class Game {
     public enum Player { HUMAN, MACHINE}
     public enum Move { ROCK, PAPER, SCISSORS}
 
-    private MoveSelection moveSelection;
+    private final MoveSelection machineMoveSelection;
 
-    public Game(MoveSelection moveSelection) {
-        this.moveSelection = moveSelection;
+    public Game(MoveSelection machineMoveSelection) {
+        this.machineMoveSelection = machineMoveSelection;
     }
 
     public Player play(Move humanChoice){
-        Move machineMove = moveSelection.next();
+        PlayerMove machineMove = new PlayerMove(Player.MACHINE, machineMoveSelection.next());
+        PlayerMove humanMove = new PlayerMove(Player.HUMAN, humanChoice);
 
-        if(machineMove == Move.ROCK && humanChoice == Move.SCISSORS){
-            return Player.MACHINE;
-        }
-
-        return Player.HUMAN;
+        return machineMove.vs(humanMove);
     }
 
 }
