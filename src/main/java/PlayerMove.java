@@ -9,6 +9,11 @@ public class PlayerMove {
     }
 
     public Result vs(PlayerMove otherPlayerMove) {
+
+        if(move == otherPlayerMove.move ){
+            return new Tie();
+        }
+
         if(move == Game.Move.ROCK && otherPlayerMove.move == Game.Move.SCISSORS){
             return new Win(player);
         }
