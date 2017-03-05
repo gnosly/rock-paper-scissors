@@ -19,4 +19,11 @@ public class Win implements Result {
     public int hashCode() {
         return Objects.hash(winner);
     }
+
+    @Override
+    public String toString() {
+        return "Win{" +
+                "winner=" + winner +
+                '}';
+    }
 }

@@ -10,11 +10,13 @@ public class PlayerMove {
 
     public Result vs(PlayerMove otherPlayerMove) {
 
-        if(move == otherPlayerMove.move ){
+        if (move == otherPlayerMove.move) {
             return new Tie();
         }
 
-        if(move == Game.Move.ROCK && otherPlayerMove.move == Game.Move.SCISSORS){
+
+        if (move == Game.Move.ROCK && otherPlayerMove.move == Game.Move.SCISSORS ||
+                move == Game.Move.PAPER && otherPlayerMove.move == Game.Move.ROCK) {
             return new Win(player);
         }
 
