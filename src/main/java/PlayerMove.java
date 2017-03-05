@@ -14,13 +14,6 @@ public class PlayerMove {
             return new Tie();
         }
 
-
-        if (move == Game.Move.ROCK && otherPlayerMove.move == Game.Move.SCISSORS ||
-                move == Game.Move.PAPER && otherPlayerMove.move == Game.Move.ROCK ||
-                move == Game.Move.SCISSORS && otherPlayerMove.move == Game.Move.PAPER) {
-            return new Win(player);
-        }
-
-        return new Win(otherPlayerMove.player);
+        return move.winAgainst(otherPlayerMove.move) ? new Win(player) : new Win(otherPlayerMove.player);
     }
 }
