@@ -8,11 +8,11 @@ public class PlayerMove {
         this.move = move;
     }
 
-    public Game.Player vs(PlayerMove otherPlayerMove) {
+    public Result vs(PlayerMove otherPlayerMove) {
         if(move == Game.Move.ROCK && otherPlayerMove.move == Game.Move.SCISSORS){
-            return player;
+            return new Win(player);
         }
 
-        return otherPlayerMove.player;
+        return new Win(otherPlayerMove.player);
     }
 }

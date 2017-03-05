@@ -11,7 +11,7 @@ public class Game {
         this.machineMoveSelection = machineMoveSelection;
     }
 
-    public Player play(Move humanChoice){
+    public Result play(Move humanChoice){
         PlayerMove machineMove = new PlayerMove(Player.MACHINE, machineMoveSelection.next());
         PlayerMove humanMove = new PlayerMove(Player.HUMAN, humanChoice);
 

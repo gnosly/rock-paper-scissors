@@ -7,9 +7,9 @@ class GameTest extends FlatSpec with Matchers {
 	"Rock" should "win over scissors" in {
 		val game = new Game(new FixedMoveSelection(Move.SCISSORS))
 
-		val winner = game.play(Move.ROCK)
+		val result = game.play(Move.ROCK)
 
-		winner shouldBe Player.HUMAN
+		result shouldBe new Win(Player.HUMAN)
 	}
 
 
