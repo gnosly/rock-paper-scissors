@@ -6,7 +6,7 @@ import com.gnosly.domain.Win;
 
 import java.util.Optional;
 
-import static com.gnosly.domain.Game.Player.HUMAN;
+import static com.gnosly.domain.Player.HUMAN;
 
 public class ResultPrinter {
 

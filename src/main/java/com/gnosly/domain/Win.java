@@ -4,17 +4,13 @@ import java.util.Objects;
 
 public class Win implements Result {
 
-
     private final PlayerMove winnerPlayerMove;
     private final PlayerMove loserPlayerMove;
 
-
     public Win(PlayerMove winnerPlayerMove, PlayerMove loserPlayerMove) {
-
         this.winnerPlayerMove = winnerPlayerMove;
         this.loserPlayerMove = loserPlayerMove;
     }
-
 
     public PlayerMove getWinnerPlayerMove() {
         return winnerPlayerMove;

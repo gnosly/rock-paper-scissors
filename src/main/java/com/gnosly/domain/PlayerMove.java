@@ -3,10 +3,10 @@ package com.gnosly.domain;
 import java.util.Objects;
 
 public class PlayerMove {
-    private final Game.Player player;
+    private final Player player;
     private final Move move;
 
-    public PlayerMove(Game.Player player, Move move) {
+    public PlayerMove(Player player, Move move) {
         this.player = player;
         this.move = move;
     }
@@ -22,7 +22,7 @@ public class PlayerMove {
                 new Win(otherPlayerMove, this);
     }
 
-    public Game.Player getPlayer() {
+    public Player getPlayer() {
         return player;
     }
 
