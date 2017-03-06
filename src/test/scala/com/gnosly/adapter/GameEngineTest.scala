@@ -6,8 +6,6 @@ import org.scalatest.{FlatSpec, Matchers}
 
 class GameEngineTest extends FlatSpec with Matchers {
 
-	val question = "Choose your move between paper, scissors, rock or exit:\n"
-
 	val gameEngine = new GameEngine(new Game(new FixedMoveSelection(Move.ROCK)))
 
 	"GameEngine" should "exit on Exit command" in {
@@ -31,7 +29,7 @@ class GameEngineTest extends FlatSpec with Matchers {
 		output.string shouldBe "Tie with ROCK\n"
 	}
 
-	it should "run a multiple games" in {
+	it should "run multiple games" in {
 		val output = new StringOutput
 
 		gameEngine.loop(StringInput(List("rock", "paper", "exit")), output)

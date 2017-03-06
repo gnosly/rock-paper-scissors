@@ -55,7 +55,6 @@ class GameTest extends FlatSpec with Matchers {
 		result shouldBe new Win(MACHINE.move(ROCK), HUMAN.move(SCISSORS))
 	}
 
-
 	"Paper" should "win against rock" in {
 		val game = new Game(new FixedMoveSelection(ROCK))
 

@@ -26,6 +26,13 @@ class CommandParserTest extends FlatSpec with Matchers {
 		commandParser.parse("paper").get shouldBe Move.PAPER
 	}
 
+	it should "parse paper command in uppercase" in {
+		val commandParser = new CommandParser
+
+		commandParser.parse("PAPER").get shouldBe Move.PAPER
+	}
+
+
 	it should "return empty if command not recognized" in {
 		val commandParser = new CommandParser
 
