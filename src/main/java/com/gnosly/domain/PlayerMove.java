@@ -17,7 +17,9 @@ public class PlayerMove {
             return new Tie(move);
         }
 
-        return move.winAgainst(otherPlayerMove.move) ? new Win(this, otherPlayerMove) : new Win(otherPlayerMove, this);
+        return move.winAgainst(otherPlayerMove.move) ?
+                new Win(this, otherPlayerMove) :
+                new Win(otherPlayerMove, this);
     }
 
     public Game.Player getPlayer() {

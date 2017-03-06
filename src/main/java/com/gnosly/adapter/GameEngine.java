@@ -17,7 +17,7 @@ public class GameEngine {
         game = new Game(new RandomMoveSelection());
     }
 
-    public GameEngine(Game game) {
+    GameEngine(Game game) {
         this.game = game;
     }
 
