@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class PlayerMove {
     private final Game.Player player;
-    private final Game.Move move;
+    private final Move move;
 
-    public PlayerMove(Game.Player player, Game.Move move) {
+    public PlayerMove(Game.Player player, Move move) {
         this.player = player;
         this.move = move;
     }
@@ -26,7 +26,7 @@ public class PlayerMove {
         return player;
     }
 
-    public Game.Move getMove() {
+    public Move getMove() {
         return move;
     }
 

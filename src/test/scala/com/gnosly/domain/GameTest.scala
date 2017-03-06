@@ -1,7 +1,7 @@
 package com.gnosly.domain
 
-import com.gnosly.domain.Game.Move._
 import com.gnosly.domain.Game.Player._
+import com.gnosly.domain.Move._
 import org.scalatest.{FlatSpec, Matchers}
 
 

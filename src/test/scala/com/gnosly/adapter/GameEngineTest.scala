@@ -1,7 +1,6 @@
 package com.gnosly.adapter
 
-import com.gnosly.domain.Game.Move
-import com.gnosly.domain.{FixedMoveSelection, Game}
+import com.gnosly.domain.{FixedMoveSelection, Game, Move}
 import org.scalatest.{FlatSpec, Matchers}
 
 

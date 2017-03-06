@@ -4,14 +4,14 @@ import java.util.Objects;
 
 public class Tie implements Result {
 
-    private final Game.Move tieMove;
+    private final Move tieMove;
 
-    public Tie(Game.Move tieMove) {
+    public Tie(Move tieMove) {
         this.tieMove = tieMove;
     }
 
 
-    public Game.Move getTieMove() {
+    public Move getTieMove() {
         return tieMove;
     }
 

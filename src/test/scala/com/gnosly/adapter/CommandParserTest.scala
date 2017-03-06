@@ -2,7 +2,7 @@ package com.gnosly.adapter
 
 import java.util.Optional
 
-import com.gnosly.domain.Game.Move
+import com.gnosly.domain.Move
 import org.scalatest.{FlatSpec, Matchers}
 
 

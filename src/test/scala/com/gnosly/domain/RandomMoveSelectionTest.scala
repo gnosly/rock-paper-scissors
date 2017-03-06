@@ -1,6 +1,6 @@
 package com.gnosly.domain
 
-import com.gnosly.domain.Game.Move
+
 import org.scalatest.{FlatSpec, Matchers}
 
 class RandomMoveSelectionTest extends FlatSpec with Matchers{
