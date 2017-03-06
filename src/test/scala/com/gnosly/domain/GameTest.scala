@@ -1,82 +1,83 @@
 package com.gnosly.domain
 
-import com.gnosly.domain.Game.{Move, Player}
+import com.gnosly.domain.Game.Move._
+import com.gnosly.domain.Game.Player._
 import org.scalatest.{FlatSpec, Matchers}
 
 
 class GameTest extends FlatSpec with Matchers {
 
 	"Rock" should "win against scissors" in {
-		val game = new Game(new FixedMoveSelection(Move.SCISSORS))
+		val game = new Game(new FixedMoveSelection(SCISSORS))
 
-		val result = game.play(Move.ROCK)
+		val result = game.play(ROCK)
 
-		result shouldBe new Win(Player.HUMAN)
+		result shouldBe new Win(HUMAN.move(ROCK), MACHINE.move(SCISSORS))
 	}
 
 	it should "tie against rock" in {
-		val game = new Game(new FixedMoveSelection(Move.ROCK))
+		val game = new Game(new FixedMoveSelection(ROCK))
 
-		val result = game.play(Move.ROCK)
+		val result = game.play(ROCK)
 
-		result shouldBe new Tie()
+		result shouldBe new Tie(ROCK)
 	}
 
 	it should "lose against paper" in {
-		val game = new Game(new FixedMoveSelection(Move.PAPER))
+		val game = new Game(new FixedMoveSelection(PAPER))
 
-		val result = game.play(Move.ROCK)
+		val result = game.play(ROCK)
 
-		result shouldBe new Win(Player.MACHINE)
+		result shouldBe new Win(MACHINE.move(PAPER), HUMAN.move(ROCK))
 	}
 
 	"Scissors" should "win against paper" in {
-		val game = new Game(new FixedMoveSelection(Move.PAPER))
+		val game = new Game(new FixedMoveSelection(PAPER))
 
-		val result = game.play(Move.SCISSORS)
+		val result = game.play(SCISSORS)
 
-		result shouldBe new Win(Player.HUMAN)
+		result shouldBe new Win(HUMAN.move(SCISSORS), MACHINE.move(PAPER))
 	}
 
 	it should "tie against scissors" in {
-		val game = new Game(new FixedMoveSelection(Move.SCISSORS))
+		val game = new Game(new FixedMoveSelection(SCISSORS))
 
-		val result = game.play(Move.SCISSORS)
+		val result = game.play(SCISSORS)
 
-		result shouldBe new Tie()
+		result shouldBe new Tie(SCISSORS)
 	}
 
 	it should "lose against rock" in {
-		val game = new Game(new FixedMoveSelection(Move.ROCK))
+		val game = new Game(new FixedMoveSelection(ROCK))
 
-		val result = game.play(Move.SCISSORS)
+		val result = game.play(SCISSORS)
 
-		result shouldBe new Win(Player.MACHINE)
+		result shouldBe new Win(MACHINE.move(ROCK), HUMAN.move(SCISSORS))
 	}
 
 
 	"Paper" should "win against rock" in {
-		val game = new Game(new FixedMoveSelection(Move.ROCK))
+		val game = new Game(new FixedMoveSelection(ROCK))
 
-		val result = game.play(Move.PAPER)
+		val result = game.play(PAPER)
 
-		result shouldBe new Win(Player.HUMAN)
+		result shouldBe new Win(HUMAN.move(PAPER), MACHINE.move(ROCK))
 	}
 
 	it should "tie against paper" in {
-		val game = new Game(new FixedMoveSelection(Move.PAPER))
+		val game = new Game(new FixedMoveSelection(PAPER))
 
-		val result = game.play(Move.PAPER)
+		val result = game.play(PAPER)
 
-		result shouldBe new Tie()
+		result shouldBe new Tie(PAPER)
 	}
 
 	it should "lose against scissors" in {
-		val game = new Game(new FixedMoveSelection(Move.SCISSORS))
+		val game = new Game(new FixedMoveSelection(SCISSORS))
 
-		val result = game.play(Move.PAPER)
+		val result = game.play(PAPER)
 
-		result shouldBe new Win(Player.MACHINE)
+		result shouldBe new Win(MACHINE.move(SCISSORS), HUMAN.move(PAPER))
 	}
 
 }

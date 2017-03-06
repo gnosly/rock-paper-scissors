@@ -15,7 +15,7 @@ public class ResultPrinter {
             return Optional.of("Tie");
         } else if (result instanceof Win) {
             Win win = (Win) result;
-            return Optional.of(Game.Player.HUMAN.equals(win.getWinner()) ? "You win" : "Machine wins");
+            return Optional.of(Game.Player.HUMAN.equals(win.getWinnerPlayerMove().getPlayer()) ? "You win" : "Machine wins");
         }
 
         return Optional.empty();

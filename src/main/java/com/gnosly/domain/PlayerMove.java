@@ -1,5 +1,7 @@
 package com.gnosly.domain;
 
+import java.util.Objects;
+
 public class PlayerMove {
     private final Game.Player player;
     private final Game.Move move;
@@ -12,9 +14,27 @@ public class PlayerMove {
     public Result vs(PlayerMove otherPlayerMove) {
 
         if (move == otherPlayerMove.move) {
-            return new Tie();
+            return new Tie(move);
         }
 
-        return move.winAgainst(otherPlayerMove.move) ? new Win(player) : new Win(otherPlayerMove.player);
+        return move.winAgainst(otherPlayerMove.move) ? new Win(this, otherPlayerMove) : new Win(otherPlayerMove, this);
+    }
+
+    public Game.Player getPlayer() {
+        return player;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PlayerMove that = (PlayerMove) o;
+        return player == that.player &&
+                move == that.move;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(player, move);
     }
 }
