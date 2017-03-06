@@ -24,11 +24,11 @@ public class ResultPrinter {
     }
 
     private String machineWins(Win win) {
-        return "Machine wins with " + moveVsMove(win) + "\n";
+        return "Machine wins with " + moveVsMove(win) + ". Try again!\n";
     }
 
     private String humanWins(Win win) {
-        return "You win with " + moveVsMove(win) + "\n";
+        return "You win with " + moveVsMove(win) + ". Very lucky!\n";
     }
 
     private String moveVsMove(Win win) {

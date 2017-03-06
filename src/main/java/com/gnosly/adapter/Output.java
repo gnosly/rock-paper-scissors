@@ -1,5 +1,7 @@
 package com.gnosly.adapter;
 
 public interface Output {
-    void write(String string);
+    void writeQuestion(String string);
+
+    void writeResult(String message);
 }
