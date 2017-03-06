@@ -14,7 +14,7 @@ public class ResultPrinter {
 
         if (result instanceof Tie) {
             Tie tie = (Tie) result;
-            return Optional.of("Tie with " + tie.getTieMove());
+            return Optional.of("Tie with " + tie.getTieMove() + "\n");
         } else if (result instanceof Win) {
             Win win = (Win) result;
             return Optional.of(HUMAN.equals(win.getWinnerPlayerMove().getPlayer()) ? humanWins(win) : machineWins(win));
@@ -24,11 +24,11 @@ public class ResultPrinter {
     }
 
     private String machineWins(Win win) {
-        return "Machine wins with " + moveVsMove(win);
+        return "Machine wins with " + moveVsMove(win) + "\n";
     }
 
     private String humanWins(Win win) {
-        return "You win with " + moveVsMove(win);
+        return "You win with " + moveVsMove(win) + "\n";
     }
 
     private String moveVsMove(Win win) {
