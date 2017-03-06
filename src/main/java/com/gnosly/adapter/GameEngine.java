@@ -24,9 +24,7 @@ public class GameEngine {
         if ("exit".equalsIgnoreCase(commandToParse))
             return Optional.empty();
 
-        Optional<Game.Move> humanMove = commandParser.parse(commandToParse);
-
-        return humanMove.
+        return commandParser.parse(commandToParse).
                 map(move -> game.play(move)).
                 map(result -> resultPrinter.print(result)).
                 orElse(Optional.of("Invalid command."));

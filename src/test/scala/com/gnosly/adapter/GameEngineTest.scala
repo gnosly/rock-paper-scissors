@@ -24,7 +24,7 @@ class GameEngineTest extends FlatSpec with Matchers {
 
 	it should "run a single tie game" in {
 
-		gameEngine.loop("rock") shouldBe Optional.of("tie")
+		gameEngine.loop("rock") shouldBe Optional.of("Tie")
 	}
 
 }

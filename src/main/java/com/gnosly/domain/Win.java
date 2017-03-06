@@ -9,6 +9,10 @@ public class Win implements Result {
         this.winner = winner;
     }
 
+    public Game.Player getWinner() {
+        return winner;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
