@@ -1,7 +1,6 @@
 package com.gnosly.adapter;
 
 import com.gnosly.domain.Game;
-import com.gnosly.domain.Result;
 
 import java.util.Optional;
 
@@ -25,10 +24,11 @@ public class GameEngine {
         if ("exit".equalsIgnoreCase(commandToParse))
             return Optional.empty();
 
-        Game.Move humanMove = commandParser.parse(commandToParse);
+        Optional<Game.Move> humanMove = commandParser.parse(commandToParse);
 
-        Result result = game.play(humanMove);
-
-        return resultPrinter.print(result);
+        return humanMove.
+                map(move -> game.play(move)).
+                map(result -> resultPrinter.print(result)).
+                orElse(Optional.of("Invalid command."));
     }
 }

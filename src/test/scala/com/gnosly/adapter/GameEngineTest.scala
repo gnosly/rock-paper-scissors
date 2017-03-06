@@ -17,7 +17,12 @@ class GameEngineTest extends FlatSpec with Matchers {
 		gameEngine.loop("exit") shouldBe Optional.empty()
 	}
 
-	"GameEngine" should "run a single tie game" in {
+	it should "alert invalid command" in {
+
+		gameEngine.loop("wrongCommand") shouldBe Optional.of("Invalid command.")
+	}
+
+	it should "run a single tie game" in {
 
 		gameEngine.loop("rock") shouldBe Optional.of("tie")
 	}
