@@ -1,4 +1,4 @@
-name := "morra-cinese"
+name := "rock–paper–scissors"
 
 version := "1.0"
 
