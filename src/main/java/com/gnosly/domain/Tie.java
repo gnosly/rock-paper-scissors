@@ -10,6 +10,11 @@ public class Tie implements Result {
         this.tieMove = tieMove;
     }
 
+
+    public Game.Move getTieMove() {
+        return tieMove;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

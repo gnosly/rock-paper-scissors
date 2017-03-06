@@ -13,17 +13,17 @@ class ResultPrinterTest extends FlatSpec with Matchers {
 
 	"ResultPrinter" should "print tie if tie" in {
 
-		resultPrinter.print(new Tie(PAPER)) shouldBe Optional.of("Tie")
+		resultPrinter.print(new Tie(PAPER)) shouldBe Optional.of("Tie with PAPER")
 	}
 
 	"ResultPrinter" should "print you win if human win" in {
 
-		resultPrinter.print(new Win(HUMAN.move(PAPER), MACHINE.move(ROCK))) shouldBe Optional.of("You win")
+		resultPrinter.print(new Win(HUMAN.move(PAPER), MACHINE.move(ROCK))) shouldBe Optional.of("You win with PAPER vs ROCK")
 	}
 
 	"ResultPrinter" should "print machine wins if machine win" in {
 
-		resultPrinter.print(new Win(MACHINE.move(ROCK), HUMAN.move(SCISSORS))) shouldBe Optional.of("Machine wins")
+		resultPrinter.print(new Win(MACHINE.move(ROCK), HUMAN.move(SCISSORS))) shouldBe Optional.of("Machine wins with ROCK vs SCISSORS")
 	}
 
 }

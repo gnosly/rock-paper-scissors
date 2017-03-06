@@ -20,6 +20,10 @@ public class Win implements Result {
         return winnerPlayerMove;
     }
 
+    public PlayerMove getLoserPlayerMove() {
+        return loserPlayerMove;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

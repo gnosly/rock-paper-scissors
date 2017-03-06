@@ -24,6 +24,10 @@ public class PlayerMove {
         return player;
     }
 
+    public Game.Move getMove() {
+        return move;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
