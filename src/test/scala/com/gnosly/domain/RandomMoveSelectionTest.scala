@@ -17,7 +17,7 @@ class RandomMoveSelectionTest extends FlatSpec with Matchers{
 
 	}
 
-	it should "have the same probability distribution over the three choices" in {
+	it should "have the same probability distribution for all the three choices" in {
 		val numberOfMoves = 1000
 		val movesMap = (1 to numberOfMoves).
 			map(i => moveSelection.next()).
